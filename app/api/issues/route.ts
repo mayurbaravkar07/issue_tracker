@@ -23,6 +23,6 @@ export async function POST(request: NextRequest) {
         return NextResponse.json(newIssue, { status: 201 });
     } catch (error) {
         console.error("Error creating issue:", error);
-        return NextResponse.error("Internal Server Error", { status: 500 });
+        return NextResponse.error();
     }
 }
