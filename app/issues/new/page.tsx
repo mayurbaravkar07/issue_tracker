@@ -12,11 +12,12 @@ import { zodResolver } from '@hookform/resolvers/zod'
 import { CreateIssueSchema } from "@/app/validationSchemas";
 import { z } from 'zod'
 import Spinner from "@/app/components/Spinner";
+import delay from "delay";
 
 
 type IssueForm = z.infer<typeof CreateIssueSchema>;
 
-const NewIssuePage = () => {
+const NewIssuePage = async () => {
     const router = useRouter();
     const { register, control, handleSubmit, formState: { errors, isValid } } = useForm<IssueForm>({
         resolver: zodResolver(CreateIssueSchema)
@@ -36,6 +37,7 @@ const NewIssuePage = () => {
             setError('An unexpected error is occured ');
         }
     });
+
     return (
         <div className="max-w-xl ">
             {error && <Callout.Root color="red">
