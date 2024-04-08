@@ -1,7 +1,5 @@
 import { issueSchema } from "@/app/validationSchemas";
 import prisma from "@/prisma/client";
-import { UpdateIcon } from "@radix-ui/react-icons";
-import { error } from "console";
 import { NextRequest, NextResponse } from "next/server";
 
 
@@ -20,7 +18,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
     if (!issue) {
         return NextResponse.json({ error: 'Invalid Issue' }, { status: 400 })
     }
-
+    console.log('before the update');
     const updatedIssue = await prisma.issue.update({
         where: { id: issue.id },
         data: {
@@ -28,7 +26,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
             description: body.description
         }
     });
-
+    console.log('after the update');
     return NextResponse.json(updatedIssue);
 
 
