@@ -46,8 +46,8 @@ const IssueForm = async ({ issue }: { issue?: Issue }) => {
                 <Callout.Text>{error}</Callout.Text>
             </Callout.Root>}
             <form className="space-y-3" onSubmit={onSubmit}>
-                <TextField.Root>
-                    <TextField.Input defaultValue={issue?.title} placeholder='TItle' {...register('title')} />
+                <TextField.Root placeholder="Title" defaultValue={issue?.title}   {...register('title')}>
+                    <TextField.Slot  ></TextField.Slot>
                 </TextField.Root>
                 {errors.title && <Text color="red" as="p">{errors.title?.message}</Text>}
                 <Controller
