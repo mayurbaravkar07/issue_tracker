@@ -1,26 +1,7 @@
-CACHING
-       Data Cache: 
-             -When we fetch data using the fetch()
-             -stored in the file system
-             -permanent until we redeploy our application
-             e.g fetch('...',{cache:'no-store'})
-                    fetch('...',{next:{ revalidate :3600}})
 
-       Full Route Cache(Cache on the server)
-            -Used to store the output of statically rendered routes
-            -Next.js routes are rendered statically by default
+// const IssueForm = () => dynamic(
+//     () => import('@/app/issues/_components/issueForm'),
+//     { ssr: false,
+//     loading:()=><p></p> }
 
-
-        Router Cache (Client Side cache)
-           -To store the payload of pages in browser 
-           -Lasts for session 
-           -Gets refreshed when we reload
-
- Next js Router  revalidate static  page  after 5  minutes making request to the backend and dynamic page revalidate itself after the 30 seconds
- 
-              
-
-           
-
-
-
+// );
