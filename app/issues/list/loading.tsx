@@ -44,3 +44,4 @@ const LoadingIssuesPage = () => {
 };
 
 export default LoadingIssuesPage;
+
