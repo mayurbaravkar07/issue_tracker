@@ -1,8 +1,10 @@
-import prisma from '@/prisma/client'
+import prisma from '@/prisma/client';
 import { Avatar, Card, Flex, Heading, Table } from '@radix-ui/themes';
-import React from 'react'
-import { IssueStatusBadge } from './components';
 import Link from 'next/link';
+import { IssueStatusBadge } from './components';
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
+
 const LatestIssues = async () => {
     const issues = await prisma.issue.findMany({
         orderBy: { createdAt: 'desc' },
