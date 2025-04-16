@@ -1,10 +1,10 @@
 import authOptions from '@/app/auth/authOptions';
-import { issueSchema, patchIssueSchema } from '@/app/validationSchemas';
+import { patchIssueSchema } from '@/app/validationSchemas';
 import prisma from '@/prisma/client';
-import { error } from 'console';
 import { getServerSession } from 'next-auth';
 import { NextRequest, NextResponse } from 'next/server';
-
+export const dynamic = 'force-dynamic'
+export const fetchCache = 'force-no-store'
 
 export async function PATCH(
   request: NextRequest,
